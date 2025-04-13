@@ -11,3 +11,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/print/{record}', [PrintController::class, 'print'])->name('print');
 Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 Route::post('/', [DashboardController::class, 'kontak']);
+Route::get('/panduan', [DashboardController::class, 'panduan']);

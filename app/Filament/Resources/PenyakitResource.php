@@ -22,7 +22,7 @@ class PenyakitResource extends Resource
 {
     protected static ?string $model = Penyakit::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-beaker';
 
     public static function canAccess(): bool
     {
@@ -57,14 +57,16 @@ class PenyakitResource extends Resource
                 TextColumn::make('deskripsi_penyakit')
                     ->sortable()
                     ->wrap()
+                    ->limit(200)
                     ->searchable(),
                 TextColumn::make('solusi')
                     ->sortable()
                     ->wrap()
+                    ->limit(200)
                     ->searchable(),
                 ImageColumn::make('foto')
-                    ->label('Foto Penyakit')
-                    ->size(100),
+                    ->label(label: 'Foto Penyakit')
+                    ->size(200),
                 TextColumn::make('sumber')
                     ->sortable()
                     ->searchable(),

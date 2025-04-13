@@ -22,7 +22,8 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function kontak() {
+    public function kontak()
+    {
         Kontak::create([
             'nama' => request('nama'),
             'email' => request('email'),
@@ -30,5 +31,10 @@ class DashboardController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Pesan berhasil dikirim');
+    }
+
+    public function panduan()
+    {
+        return view('panduan');
     }
 }

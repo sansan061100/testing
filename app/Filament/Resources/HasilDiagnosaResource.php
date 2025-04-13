@@ -23,7 +23,7 @@ class HasilDiagnosaResource extends Resource
 {
     protected static ?string $model = HasilDiagnosa::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
     public static function form(Form $form): Form
     {

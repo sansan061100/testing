@@ -20,7 +20,7 @@ class GejalaResource extends Resource
 {
     protected static ?string $model = Gejala::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-heart';
 
     public static function canAccess(): bool
     {

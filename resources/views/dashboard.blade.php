@@ -41,8 +41,8 @@
                                 <a href="#" class="nav-link me-lg-3">Home</a>
                                 <a href="#about" class="nav-link me-lg-3">Tentang</a>
                                 <a href="#contact" class="nav-link me-lg-3">Kontak</a>
-                                <a href="panduan.php" class="nav-link me-lg-3">Panduan</a>
-                                <a href="./signup/signup.php" class="btn btn-primary mb-0 mt-4 mt-sm-0">Daftar</a>
+                                <a href="{{ url('panduan') }}" class="nav-link me-lg-3">Panduan</a>
+                                <a href="{{ url('app/register') }}" class="btn btn-primary mb-0 mt-4 mt-sm-0">Daftar</a>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                         Pendeteksi Penyakit Pada Burung
                     </h1>
                     <p class="mt-lg-4">Diagnosakan keluhan pada burung peliharaan anda pada kami sekarang</p>
-                    <a href="./signin/signin.php" class="btn btn-primary mt-2">Coba Diagnosa</a>
+                    <a href="{{ url('app/login') }}" class="btn btn-primary mt-2">Coba Diagnosa</a>
                 </div>
                 <div class="col-sm-6">
                     <img src="{{ asset('assets/img/love-birds-1454325.jpg') }}" alt="doctor-woman" loading="lazy" />
@@ -138,7 +138,7 @@
                     Silahkan Coba Diagnosa <br />
                     Jika Timbul Gejala
                 </h1>
-                <a href="./signin/signin.php" class="btn btn-secondary mt-3">Coba Diagnosa</a>
+                <a href="{{ url('app/login') }}" class="btn btn-secondary mt-3">Coba Diagnosa</a>
             </div>
         </div>
     </section>

@@ -66,17 +66,17 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="px-6 py-4 font-medium">
-                        <x-filament::button size="md" color="info" href="{{ url('/admin/hasil-diagnosas/create') }}" tag="a">
-                            Kembali Diagnosa
-                        </x-filament::button>
-                        <x-filament::button size="md" color="success" href="{{ url('/print/' . $this->record->id) }}" tag="a" target="_blank">
-                            Print
-                        </x-filament::button>
-                    </td>
-                </tr>
             </tbody>
         </table>
+        <div class="mt-5">
+            <x-filament::button size="md" color="info" href="{{ url('/admin/hasil-diagnosas/create') }}" tag="a">
+                Kembali Diagnosa
+            </x-filament::button>
+            <td>
+                <x-filament::button size="md" color="success" href="{{ url('/print/' . $this->record->id) }}" tag="a" target="_blank">
+                    Print
+                </x-filament::button>
+            </td>
+        </div>
     </div>
 </x-filament-panels::page>

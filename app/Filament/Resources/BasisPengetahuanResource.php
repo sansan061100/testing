@@ -20,7 +20,7 @@ class BasisPengetahuanResource extends Resource
 {
     protected static ?string $model = BasisPengetahuan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
 
     public static function canAccess(): bool
     {
