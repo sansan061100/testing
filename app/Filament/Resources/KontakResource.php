@@ -19,6 +19,11 @@ class KontakResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-envelope-open';
 
+    public static function canAccess(): bool
+    {
+        return auth()->user()->role == "ADMIN";
+    }
+
     public static function form(Form $form): Form
     {
         return $form

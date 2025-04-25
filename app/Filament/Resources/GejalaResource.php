@@ -31,6 +31,20 @@ class GejalaResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('kode')
+                    ->readOnly()
+                    ->required()
+                    ->default(function () {
+                        // return 'SPK-'. str_pad(Penyakit::max('kode') + 1, 4, '0', STR_PAD_LEFT);
+
+                        // kode di database SPK-001, SPK-002, SPK-003
+                        $lastKode = Gejala::max('kode');
+                        $lastNumber = (int) substr($lastKode, 4);
+                        $newNumber = $lastNumber + 1;
+
+                        $newKode = 'SPK-' . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
+                        return $newKode;
+                    }),
                 TextInput::make('nama_gejala')
                     ->required(),
                 Textarea::make('pertanyaan')
@@ -42,6 +56,9 @@ class GejalaResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('kode')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('nama_gejala')
                     ->searchable()
                     ->sortable(),

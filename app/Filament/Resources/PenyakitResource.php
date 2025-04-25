@@ -33,6 +33,20 @@ class PenyakitResource extends Resource
     {
         return $form
             ->schema([
+                TextInput::make('kode')
+                    ->readOnly()
+                    ->required()
+                    ->default(function () {
+                        // return 'P-'. str_pad(Penyakit::max('kode') + 1, 4, '0', STR_PAD_LEFT);
+
+                        // kode di database P-001, P-002, P-003
+                        $lastKode = Penyakit::max('kode');
+                        $lastNumber = (int) substr($lastKode, 2);
+                        $newNumber = $lastNumber + 1;
+
+                        $newKode = 'P-' . str_pad($newNumber, 3, '0', STR_PAD_LEFT);
+                        return $newKode;
+                    }),
                 TextInput::make('nama_penyakit')
                     ->required(),
                 Textarea::make('deskripsi_penyakit')
@@ -51,6 +65,9 @@ class PenyakitResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('kode')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('nama_penyakit')
                     ->sortable()
                     ->searchable(),

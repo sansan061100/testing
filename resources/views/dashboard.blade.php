@@ -67,15 +67,15 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="col-4" style="border-right: 0.1em solid #f7f9fe">
-                            <h1>7+</h1>
+                            <h1>{{ $penyakit }}+</h1>
                             <p>Penyakit</p>
                         </div>
                         <div class="col-4" style="border-right: 0.1em solid #f7f9fe">
-                            <h1>10+</h1>
+                            <h1>{{ $gejala }}+</h1>
                             <p>Gejala</p>
                         </div>
                         <div class="col-4">
-                            <h1>3+</h1>
+                            <h1>{{ $pengguna }}+</h1>
                             <p>Pengguna</p>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                     <h5>SistemPakar.</h5>
                     <p>Tasikmalaya, Indonesia</p>
                     <a href="#" target="_blank">
-                        <img class="maps" src="{{ asset('assets/img/peta.png') }}" alt="maps" loading="lazy" />
+                        <img class="maps" src="{{ asset('assets/img/download.webp') }}" alt="maps" loading="lazy" />
                     </a>
                     <div class="social-media mt-4 mb-3 mb-lg-0">
                         <span class="iconify me-2" data-icon="akar-icons:facebook-fill" data-width="30"></span>
@@ -168,6 +168,19 @@
                 </div>
                 <div class="col-sm-4" id="contact">
                     <h5>Hubungi Kami</h5>
+                    {{-- alert --}}
+
+                    @if(session('success'))
+                        <script>
+                            swal({
+                                title: "Berhasil",
+                                text: "{{ session('success') }}",
+                                icon: "success",
+                                button: "OK",
+                            });
+                        </script>
+                    @endif
+
                     <form action="{{ url('/') }}" method="post">
                         @csrf
                         <input type="text" class="form-control mb-2 mt-4" placeholder="Nama..." name="nama" autocomplete="off" required />

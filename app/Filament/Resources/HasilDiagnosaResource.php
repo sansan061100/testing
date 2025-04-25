@@ -33,7 +33,7 @@ class HasilDiagnosaResource extends Resource
         foreach ($gejala as $key => $item) {
             $gejalaCheckboxForm[] = Group::make([
                 Placeholder::make('gejala_' . $item->id)
-                    ->label(new HtmlString('<p class="text-md">' . $key + 1 . '. ' . $item->nama_gejala . '</p>')),
+                    ->label(new HtmlString('<p class="text-md">' . $key + 1 . '. ' . $item->pertanyaan . '</p>')),
                 Checkbox::make('gejala_' . $item->id)
                     ->label('Ya'),
             ]);
