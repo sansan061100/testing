@@ -13,8 +13,8 @@ class ListHasilDiagnosas extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()
-            ->hidden(fn (): bool => auth()->user()->role == "ADMIN")
+            // Actions\CreateAction::make()
+            // ->hidden(fn (): bool => auth()->user()->role == "ADMIN")
         ];
     }
 }
