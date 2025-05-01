@@ -102,7 +102,7 @@ class AdminPanelProvider extends PanelProvider
                         ->visible(fn (): bool => auth()->user()->role == "USER"),
                     NavigationItem::make('Hasil Diagnosa')
                         ->icon('heroicon-o-clipboard-document-check')
-                        ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.hasil-diagnosas.*'))
+                        ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.resources.hasil-diagnosas.index'))
                         ->url(fn (): string => HasilDiagnosaResource::getUrl()),
                     NavigationItem::make('Kontak')
                         ->icon('heroicon-o-envelope-open')
