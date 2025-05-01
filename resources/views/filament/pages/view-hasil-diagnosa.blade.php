@@ -69,7 +69,7 @@
             </tbody>
         </table>
         <div class="mt-5">
-            <x-filament::button size="md" color="info" href="{{ url('/admin/hasil-diagnosas/create') }}" tag="a">
+            <x-filament::button size="md" color="info" href="{{ url('/app/hasil-diagnosas/create') }}" tag="a">
                 Kembali Diagnosa
             </x-filament::button>
             <td>
